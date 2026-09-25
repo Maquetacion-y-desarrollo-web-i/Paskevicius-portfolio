@@ -1,0 +1,22 @@
+/* Encabezados, textos con mucho peso */
+h1,
+h2,
+h3 {
+   font-family: VT323, monospace;
+}
+
+/* Navegacion, tags, botones, codigo y terminales */
+a,
+button {
+    font-family: jetbrains-mono, monospace;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Parrafos, descripciones de proyectos, contacto. */
+p,
+span {
+    font-family: inter, monospace;
+    font-size: 16px;
+    letter-spacing: 1.6px;
+}

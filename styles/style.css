@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 :root {
   /* =========================
      Base
      ========================= */
-  --color-background: #F7F8FA;
-  --color-surface: #FFFFFF;
+  --color-background: #14110c;
+  --color-surface: #1c1811;
 
   /* =========================
      Typography
      ========================= */
-  --color-text-primary: #111318;
+  --color-text-primary: #e4efe4;
   --color-text-secondary: #646A73;
   --color-text-muted: #A9ADB5;
 
@@ -20,9 +22,9 @@
   /* =========================
      Brand / Accent
      ========================= */
-  --color-accent: #5B5CFF;
-  --color-accent-dark: #3839C9;
-  --color-accent-soft: #E9E9FF;
+  --color-accent: #d9800c;
+  --color-accent-dark: #975806;
+  --color-accent-soft: #e1a14e;
 
   /* =========================
      Experimental
@@ -68,39 +70,66 @@ img {
 
 html,
 body {
-    width: 100%;
+   width: 100%;
   height: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
     background-color: var(--color-background);
     color: var(--color-text-primary);
 
 }
 
+header {
+   width: 100%;
+   padding: 1rem 2rem;
+   display: flex;
+   justify-content: space-evenly;
+}
+
+header h1 {
+   font-family: 'VT323', monospace;
+}
+header nav {}
+header nav ul {
+   display: flex;
+   gap: 2rem;
+}
+
 main {
     display: flex;
+    flex-direction: column;
     width: max-content;
     gap: 5rem;
 }
 section {
     border: 1px solid black;
     width: 100dvw;
-      flex-shrink: 0;
 
+}
+
+#inicio {
+    background-color: var(--color-surface);
+    padding: 2rem 2rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:3rem;
 }
 
 .presentacion-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex: 1;
 }
 
-.presentacion-container img {
-    width: 200px;
-    border-radius: 50%;
+.presentacion-image {
+   flex: 1;
 }
 
-.presentacion-decripcion {
-    max-width: 500px;
-    padding: 1rem;
+.texto-presentacion-1 {
+   margin: 20px 0;
+   text-shadow: 0px 5px 10px var(--color-accent);
+   font-size: 48px;
+
+}
+.texto-presentacion-2 {
+     font-weight: 400;
+   font-size: 30px;
+   margin: 20px 0;
 }
