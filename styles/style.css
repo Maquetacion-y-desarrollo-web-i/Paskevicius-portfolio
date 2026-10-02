@@ -1,61 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap');
 
 :root {
-  /* =========================
-     Base
-     ========================= */
-  --color-background: #14110c;
-  --color-surface: #1c1811;
+  --color-bg: #FAF8F4;
+  --color-card: #FFFFFF;
+  --color-section-alt: #F1EEE6;
+  --color-border: #E3DFD3;
+  --color-text: #17140F;
+  --color-text-secondary: #5C574C;
+  --color-text-muted: #8C8677;
+  --color-amber: #FF8A00;
+  --color-amber-text: #A34E00;
+  --color-amber-btn-text: #241300;
+  --color-terminal-bg: #0D0B08;
+  --color-terminal-text: #FFB000;
+  --color-terminal-muted: #8C5E00;
 
-  /* =========================
-     Typography
-     ========================= */
-  --color-text-primary: #e4efe4;
-  --color-text-secondary: #646A73;
-  --color-text-muted: #A9ADB5;
+  --font-display: 'VT323', monospace;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', sans-serif;
 
-  /* =========================
-     Borders
-     ========================= */
-  --color-border: #E4E7EC;
-
-  /* =========================
-     Brand / Accent
-     ========================= */
-  --color-accent: #d9800c;
-  --color-accent-dark: #975806;
-  --color-accent-soft: #e1a14e;
-
-  /* =========================
-     Experimental
-     ========================= */
-  --color-cyan: #00C2FF;
-
-  --gradient-primary: linear-gradient(
-    135deg,
-    #5B5CFF 0%,
-    #8B7CFF 45%,
-    #C5B8FF 100%
-  );
-
-  --gradient-electric: linear-gradient(
-    135deg,
-    #5B5CFF 0%,
-    #00C2FF 100%
-  );
-
-  /* =========================
-     Semantic
-     ========================= */
-  --color-success: #16835B;
-  --color-warning: #B7791F;
-  --color-error: #D64545;
-
-  /* =========================
-     Effects
-     ========================= */
-  --glow-accent: 0 0 30px rgba(91, 92, 255, 0.25);
-  --glow-cyan: 0 0 30px rgba(0, 194, 255, 0.25);
+  --content-width: 1020px;
+  --header-height: 68px;
+  --section-padding: 110px;
+  --radius-card: 10px;
+  --radius-btn: 8px;
+  --easing: cubic-bezier(.22, 1, .36, 1);
 }
 
 * {
@@ -64,72 +33,282 @@
   padding: 0;
 }
 
-img {
-    object-fit: cover;
+html {
+  scroll-behavior: smooth;
 }
 
-html,
 body {
-   width: 100%;
-  height: 100%;
-    background-color: var(--color-background);
-    color: var(--color-text-primary);
-
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  font-family: var(--font-mono);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================
+   Header
+   ========================= */
 header {
-   width: 100%;
-   padding: 1rem 2rem;
-   display: flex;
-   justify-content: space-evenly;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: rgba(250, 248, 244, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 100;
 }
 
-header h1 {
-   font-family: 'VT323', monospace;
+header .logo {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  letter-spacing: 0.5px;
 }
-header nav {}
+
 header nav ul {
-   display: flex;
-   gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
+header nav a {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  transition: color 0.2s var(--easing);
+}
+
+header nav a:hover {
+  color: var(--color-text);
+}
+
+header .cta-amber {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: var(--color-amber);
+  color: var(--color-amber-btn-text);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-btn);
+  transition: background-color 0.2s var(--easing);
+}
+
+header .cta-amber:hover {
+  background-color: var(--color-amber-text);
+  color: var(--color-bg);
+}
+
+/* =========================
+   Main / Sections
+   ========================= */
 main {
-    display: flex;
-    flex-direction: column;
-    width: max-content;
-    gap: 5rem;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-top: var(--header-height);
 }
+
 section {
-    border: 1px solid black;
-    width: 100dvw;
-
+  padding: var(--section-padding) 2rem;
 }
 
+section:nth-child(even) {
+  background-color: var(--color-section-alt);
+}
+
+section h2 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   Inicio / Hero
+   ========================= */
 #inicio {
-    background-color: var(--color-surface);
-    padding: 2rem 2rem;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap:3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  min-height: calc(100vh - var(--header-height));
 }
 
 .presentacion-container {
-    flex: 1;
+  flex: 1;
+}
+
+#inicio h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+#inicio .posicionamiento {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+#inicio p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  max-width: 540px;
 }
 
 .presentacion-image {
-   flex: 1;
+  flex: 0 0 320px;
 }
 
-.texto-presentacion-1 {
-   margin: 20px 0;
-   text-shadow: 0px 5px 10px var(--color-accent);
-   font-size: 48px;
-
+.presentacion-image img {
+  width: 100%;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
 }
-.texto-presentacion-2 {
-     font-weight: 400;
-   font-size: 30px;
-   margin: 20px 0;
+
+/* =========================
+   Botones
+   ========================= */
+.btn-primary {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: var(--color-amber);
+  color: var(--color-amber-btn-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-btn);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s var(--easing);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-amber-text);
+  color: var(--color-bg);
+}
+
+.btn-secondary {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: transparent;
+  color: var(--color-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: border-color 0.2s var(--easing);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-text);
+}
+
+/* =========================
+   Cards
+   ========================= */
+.card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+}
+
+/* =========================
+   Terminal
+   ========================= */
+.terminal {
+  background-color: var(--color-terminal-bg);
+  color: var(--color-terminal-text);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  line-height: 1.7;
+}
+
+.terminal .terminal-muted {
+  color: var(--color-terminal-muted);
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+  padding: 3rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-section-alt);
+}
+
+footer p {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* =========================
+   Responsive ≤900px
+   ========================= */
+@media (max-width: 900px) {
+  header {
+    position: static;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  main {
+    padding-top: 0;
+  }
+
+  section {
+    padding: 60px 1.5rem;
+  }
+
+  #inicio {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .presentacion-image {
+    flex: none;
+    width: 100%;
+    max-width: 320px;
+  }
 }
