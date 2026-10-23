@@ -1,112 +1,122 @@
 <!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victorio Paskevicius — Desarrollador de software</title>
+    <meta
+      name="description"
+      content="Soy Victorio Paskevicius, desarrollador de software. Construyo soluciones completas a partir de problemas reales: análisis, diseño, construcción y despliegue."
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Victorio Paskevicius — Desarrollador de software</title>
-  <meta name="description"
-    content="Soy Victorio Paskevicius, desarrollador de software. Construyo soluciones completas a partir de problemas reales: análisis, diseño, construcción y despliegue." />
-  <link rel="stylesheet" href="styles/style.css" />
-</head>
+  <body>
+    <header>
+      <a href="#inicio" class="logo">
+        <span class="span"> >_ </span> victorio_paskevicius</a
+      >
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a href="#contacto" class="cta-amber">Contactar</a>
+    </header>
 
-<body>
-  <header>
-    <a href="#inicio" class="logo"> <span class="span"> >_ </span> victorio_paskevicius</a>
-    <nav aria-label="Principal">
-      <ul>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-    <a href="#contacto" class="cta-amber">Contactar</a>
-  </header>
-
-  <main>
-    <!-- INICIO -->
-    <section id="inicio">
-      <div class="presentacion-container">
-        <h1>Victorio Paskevicius</h1>
-        <p class="posicionamiento">
-          Transformo problemas reales en soluciones de software
-        </p>
-        <p>
-          Soy desarrollador de software. Puedo participar en el proceso
-          completo de una solución: entender el problema, relevar los
-          requerimientos, analizarlo, diseñar una propuesta, construirla,
-          probarla, y llevarla a despliegue.
-        </p>
-        <div class="presentacion-buttons">
-          <button class="btn-primary">Ver Proyectos</button>
-          <button class="btn-secondary">Contactar</button>
+    <main>
+      <!-- INICIO -->
+      <section id="inicio">
+        <div class="presentacion-container">
+          <h1>Victorio Paskevicius</h1>
+          <p class="posicionamiento">
+            Transformo problemas reales en soluciones de software
+          </p>
+          <p>
+            Soy desarrollador de software. Puedo participar en el proceso
+            completo de una solución: entender el problema, relevar los
+            requerimientos, analizarlo, diseñar una propuesta, construirla,
+            probarla, y llevarla a despliegue.
+          </p>
+          <div class="presentacion-buttons">
+            <button class="btn-primary">Ver Proyectos</button>
+            <button class="btn-secondary">Contactar</button>
+          </div>
         </div>
-      </div>
-      <div class="presentacion-image">
-        <img src="./images/foto-personal.jpg" alt="Foto de Victorio Paskevicius" />
-        <div class="terminal">
+        <div class="presentacion-image">
+          <img
+            src="./images/foto-personal.jpg"
+            alt="Foto de Victorio Paskevicius"
+          />
+          <div class="terminal">
+            <div class="topbar-terminal terminal-text">
+              <p>~/portfolio/sobre-mi</p>
+            </div>
+            <div class="content-terminal terminal-text">
+              <p>$ whoami</p>
+              <p>victorio_paskevicius: desarrollador de software</p>
+
+              <p>$ cat enfoque.txt</p>
+              <p>primero el problema, después la solución</p>
+
+              <p>$ ./evolucion --resumen</p>
+              <p># aprender → construir → comprender → resolver</p>
+
+              <p>$</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- PROYECTOS -->
+      <section id="proyectos">
+        <h2>Proyectos</h2>
+      </section>
+      <!-- CONTACTO -->
+      <section id="contacto">
+        <h2 class="contact-title">Contacto</h2>
+
+        <div class="contact-content">
+          <p>
+            Si tenes un problema que crees que se puede resolver con software,
+            escribime. Prefiero empezar por entender que necesitas antes de
+            hablar de tecnologias.
+          </p>
+
+          <!-- CARDS DE CONTACTO -->
+          <div class="cards-contacto">
+            <!-- Gmail -->
+            <div id="card-contacto-email" class="card-contacto">
+              <a href="mailto:pskvictorio@gmail.com" target="_blank" rel="noopener noreferrer">
+                <strong>Email:</strong> pskvictorio@gmail.com
+              </a>
+            </div>
+            <!-- github -->
+            <div id="card-contacto-github" class="card-contacto">
+              <a href="https://github.com/pskvictorio" target="_blank" rel="noopener noreferrer">
+                <strong>Github:</strong> https://github.com/pskvictorio
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- TERMINAL -->
+        <div class="terminal contact-terminal">
           <div class="topbar-terminal terminal-text">
-            <p>~/portfolio/sobre-mi</p>
+            <p>./contactar.sh</p>
           </div>
           <div class="content-terminal terminal-text">
-            <p>$ whoami</p>
-            <p>victorio_paskevicius: desarrollador de software</p>
-
-            <p>$ cat enfoque.txt</p>
-            <p>primero el problema, después la solución</p>
-
-            <p>$ ./evolucion --resumen</p>
-            <p># aprender → construir → comprender → resolver</p>
-
-            <p>$</p>
+            <p>$ response</p>
+            <p>Respuesta en breve</p>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- PROYECTOS -->
-    <section id="proyectos">
-      <h2>Proyectos</h2>
-    </section>
-    <!-- CONTACTO -->
-    <section id="contacto">
-      <h2>Contacto</h2>
+      </section>
+    </main>
 
-      <p>Si tenes un problema que crees que se puede resolver con software, escribime. Prefiero empezar por entender que
-        necesitas antes de hablar de tecnologias.</p>
+    <footer>
+      <p>victorio_paskevicius — 2026</p>
+    </footer>
 
-
-      <!-- CARDS DE CONTACTO -->
-      <div class="cards-contacto">
-        <!-- Gmail -->
-        <div id="card-contacto-email" class="card-contacto">
-          <p><strong>Email:</strong> pskvictorio@gmail.com</p>
-        </div>
-        <!-- github -->
-        <div id="card-contacto-github" class="card-contacto">
-          <p><strong>Github:</strong> pskvictorio@gmail.com</p>
-        </div>
-        <!-- Linkedin -->
-        <div id="card-contacto-linkedin" class="card-contacto">
-          <p><strong>Linkedin:</strong> pskvictorio@gmail.com</p>
-        </div>
-      </div>
-
-      <div class="terminal">
-        <div class="topbar-terminal terminal-text">
-          <p>./contactar.sh</p>
-        </div>
-        <div class="content-terminal terminal-text">
-          <p>$ response</p>
-          <p>Respuesta en breve</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>victorio_paskevicius — 2026</p>
-  </footer>
-
-  <script src="./main.js"></script>
-</body>
-
+    <script src="./main.js"></script>
+  </body>
 </html>
