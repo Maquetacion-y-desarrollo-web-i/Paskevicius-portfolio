@@ -142,14 +142,30 @@ section:nth-child(even) {
   background-color: var(--color-section-alt);
 }
 
-section h2 {
+/* Titulo de seccion compartido (mismo patron en todas las secciones) */
+.section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-title-label {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--color-text-secondary);
-  margin-bottom: 2rem;
+  letter-spacing: 3px;
+  color: var(--color-amber-text);
+}
+
+.section-title-main {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 4vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: normal;
+  color: var(--color-text);
 }
 
 /* =========================
@@ -173,11 +189,15 @@ section h2 {
 
 }
 
-#inicio h1 {
-  font-family: var(--font-display);
+/* El inicio usa el mismo patron de titulo, con la animacion de tipeo */
+#inicio .section-title {
+  margin-bottom: 0;
+}
+
+#inicio .section-title-main {
+  display: inline-block;
+  align-self: flex-start;
   font-size: clamp(3rem, 4vw, 5rem);
-  line-height: 1;
-  color: var(--color-text);
   overflow: hidden;
   white-space: nowrap;
   border-right: 3px solid var(--color-amber);
@@ -197,13 +217,21 @@ section h2 {
   50% { border-color: transparent; }
 }
 
-#inicio .posicionamiento {
+/* Frase principal de cada seccion, con la fuente display */
+.section-lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+  color: var(--color-text);
+  max-width: 32ch;
 }
 
-#inicio p {
-
+/* Frase secundaria en fuente de cuerpo */
+.section-sub {
+  color: var(--color-text-secondary);
+  max-width: 42ch;
 }
-
 .presentacion-image {
   display: flex;
   flex-wrap: wrap;
@@ -296,26 +324,35 @@ section h2 {
   padding: 12px 0px;
 }
 
+/* =========================
+   CONTACTO
+   ========================= */
 #contacto {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); 
-  grid-template-rows: (repeat(2, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  gap: 1rem;
+  gap: 2.5rem;
 
   align-items: center;
-  justify-items: center;
 }
 
-/* Titulo de la seccion de contacto */
-.contact-title {
-    grid-column: span 2;
-    grid-row: 1;
+/* Titulo en dos partes: label mono + titulo display */
+#contacto .section-title {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
 }
 
 /* Contenido de la seccion de contacto */
 .contact-content {
-  grid-column: span 1;
+  grid-column: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Cards de contacto */
+.cards-contacto {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -323,30 +360,99 @@ section h2 {
 }
 
 .card-contacto {
-  width: fit-content;
-  background: #b0b0af;
-
-  padding: .5rem 1rem;
-  margin: 1rem 0;
-
-  border: 1px solid var(--color-border);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
   border-radius: var(--radius-card);
 }
+
 .card-contacto:hover {
-  background: #a0a0a0;
-  transform: translateY(-2px);
-  cursor: pointer;
-  transition: all 0.2s var(--easing);
+  background: transparent;
+  transform: none;
+}
+
+.card-contacto a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-style: normal;
+
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1rem 1.25rem;
+
+  transition:
+    border-color 0.2s var(--easing),
+    transform 0.2s var(--easing),
+    box-shadow 0.2s var(--easing);
+}
+
+.card-contacto a:hover {
+  border-color: var(--color-amber);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(23, 20, 15, 0.08);
+}
+
+.card-contacto-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+}
+
+.card-contacto-value {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.card-contacto-action {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-amber-text);
+  transition: transform 0.2s var(--easing), color 0.2s var(--easing);
+}
+
+.card-contacto a:hover .card-contacto-action {
+  transform: translateX(5px);
+  color: var(--color-amber);
 }
 
 /* Terminal de contacto */
 .contact-terminal {
-  grid-column: span 1;
-  max-width: content;
+  grid-column: 2;
+  min-width: 0;
+  width: 100%;
 }
+
 .contact-terminal p {
   color: var(--color-terminal-text);
-  font-size: .8rem;
+  font-size: 0.8rem;
+}
+
+.terminal-muted {
+  color: var(--color-terminal-muted);
+}
+
+.cursor-terminal {
+  display: inline-block;
+  color: var(--color-terminal-text);
+  animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 /* =========================
@@ -410,12 +516,11 @@ footer p {
   #contacto {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .cards-contacto {
-    width: 60dvw;
-    margin: auto;
+    width: 100%;
   }
 
   .card-contacto {
@@ -423,6 +528,6 @@ footer p {
   }
 
   .contact-terminal {
-    width: 50dvw;
+    width: 100%;
   }
 }
