@@ -324,6 +324,25 @@ section:nth-child(even) {
   padding: 12px 0px;
 }
 
+
+/* =========================
+   PROYECTOS
+   ========================= */
+.container-projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 2.5rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
 /* =========================
    CONTACTO
    ========================= */
@@ -439,13 +458,13 @@ section:nth-child(even) {
   color: var(--color-terminal-muted);
 }
 
-.cursor-terminal {
+/* .cursor-terminal {
   display: inline-block;
   color: var(--color-terminal-text);
   animation: cursor-blink 1s step-end infinite;
-}
+} */
 
-@keyframes cursor-blink {
+/* @keyframes cursor-blink {
   0%,
   100% {
     opacity: 1;
@@ -453,7 +472,7 @@ section:nth-child(even) {
   50% {
     opacity: 0;
   }
-}
+} */
 
 /* =========================
    FOOTER
@@ -500,6 +519,15 @@ footer p {
   #inicio {
     flex-direction: column;
     min-height: auto;
+  }
+
+  /* Sin animacion de tipeo: el nombre no llegaba a mostrarse completo */
+  #inicio .section-title-main {
+    width: 100%;
+    white-space: normal;
+    overflow: visible;
+    border-right: none;
+    animation: none;
   }
 
   .presentacion-image {
