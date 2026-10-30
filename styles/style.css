@@ -338,10 +338,29 @@ section:nth-child(even) {
 .project-card {
   display: flex;
   flex-direction: column;
+
+  background-color: var(--color-bg);
+
+  padding: 20px 20px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+
+   transition:
+    border-color 0.2s var(--easing),
+    transform 0.2s var(--easing),
+    box-shadow 0.2s var(--easing);
 }
 
+.project-card:hover {
+    border-color: var(--color-amber);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(23, 20, 15, 0.08);
+}
 
-
+.project-card h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+}
 
 /* =========================
    CONTACTO
@@ -458,22 +477,6 @@ section:nth-child(even) {
   color: var(--color-terminal-muted);
 }
 
-/* .cursor-terminal {
-  display: inline-block;
-  color: var(--color-terminal-text);
-  animation: cursor-blink 1s step-end infinite;
-} */
-
-/* @keyframes cursor-blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-} */
-
 /* =========================
    FOOTER
    ========================= */
@@ -534,6 +537,11 @@ footer p {
     flex: none;
     width: 100%;
     max-width: 320px;
+  }
+
+  .container-projects {
+    display: flex;
+    flex-direction: column;
   }
 }
 
